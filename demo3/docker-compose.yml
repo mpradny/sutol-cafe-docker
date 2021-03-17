@@ -1,0 +1,27 @@
+version: '3.9'
+services: 
+  domino:
+    image: domino-docker:V1200_02112021prod
+#    image: domino-docker:V1101_03212020prod
+    hostname: demo03.sutol.demo
+    stop_grace_period: 60s
+#    stdin_open: true
+#    tty: true
+#    command: --update --run-design
+
+    ports:
+      - 80:80
+      - 1352:1352
+
+    volumes:
+      - ./config.json:/local/config.json
+      - ./ids:/local/ids
+      - notesdata:/local/notesdata
+
+    environment: 
+      SetupAutoConfigure: 1
+      SetupAutoConfigureParams: /local/config.json   
+  
+volumes: 
+  notesdata:
+    

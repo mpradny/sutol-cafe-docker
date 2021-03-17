@@ -1,0 +1,48 @@
+version: '3.9'
+services: 
+  adminDomino:
+    image: domino-docker:V1200_02112021prod
+    hostname: demo02.sutol.demo
+    stop_grace_period: 20s
+    stdin_open: true
+    tty: true
+
+    ports:
+      - 80:80
+      - 1352:1352
+
+    volumes:
+      - ./config1.json:/local/config.json
+      - ids:/local/notes
+
+    environment: 
+      SetupAutoConfigure: 1
+      SetupAutoConfigureParams: /local/config.json   
+  
+  nextDomino:
+    image: domino-docker:V1200_02112021prod
+    hostname: nextSrv0.sutol.demo
+    stop_grace_period: 20s
+    entrypoint: bash -c "sleep 10; /local/start.sh"
+
+    stdin_open: true
+    tty: true
+
+    ports:
+      - 81:80
+      - 1353:1352
+
+    volumes:
+     - ./config2.json:/local/config.json
+     - ids:/local/notes
+
+    environment: 
+      SetupAutoConfigure: 1
+      SetupAutoConfigureParams: /local/config.json
+
+    depends_on: 
+      - "adminDomino"
+  
+volumes: 
+  ids:
+    external: false

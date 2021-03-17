@@ -1,0 +1,19 @@
+version: '3.9'
+services: 
+  domino:
+    image: domino-docker:V1200_02112021prod
+    hostname: demo04.sutol.demo
+    stop_grace_period: 60s
+#    stdin_open: true
+#    tty: true
+
+    ports:
+      - 80:80
+      - 1352:1352
+
+    volumes:
+      - notesdata:/local/notesdata
+  
+volumes: 
+  notesdata:
+    

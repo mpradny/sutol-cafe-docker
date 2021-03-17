@@ -1,0 +1,29 @@
+{
+	"serverSetup": {
+		"server": {
+			"type": "first",
+			"name": "demo03",
+			"domainName": "SutolDemo",
+			"useExistingServerID" : true,
+			"IDFilePath": "/local/ids/server.id" 
+		},
+		"network": {
+			"hostName": "demo03.sutol.demo"
+		},
+		"org": {
+			"orgName": "SutolDemo",
+			"certifierPassword": "passw0rd",
+			"useExistingCertifierID": true,
+			"certifierIDFilePath" : "/local/ids/cert.id"
+		},
+		"admin": {
+			"lastName": "Administrator",
+			"password": "passw0rd",
+			"useExistingAdminID": true,			
+			"IDFilePath": "/local/ids/admin.id" 
+		},
+        "notesINI": {
+            "ServerTasks": "Update,Replica,Router,AMgr,AdminP,CalConn,Sched,HTTP"
+        }
+	}
+}

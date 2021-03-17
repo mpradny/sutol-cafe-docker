@@ -1,0 +1,29 @@
+{
+	"serverSetup": {
+		"server": {
+			"type": "first",
+			"name": "demo02",
+			"domainName": "SutolDemo"
+		},
+		"network": {
+			"hostName": "demo02.sutol.demo"
+		},
+		"org": {
+			"orgName": "SutolDemo",
+			"certifierPassword": "passw0rd"
+		},
+		"admin": {
+			"lastName": "Administrator",
+			"password": "passw0rd",
+			"IDFilePath": "/local/notesdata/domino/html/admin.id"
+		},
+        "notesINI": {
+            "ServerTasks": "Update,Replica,Router,AMgr,AdminP,CalConn,Sched,HTTP"
+        },
+		"autoRegister":{
+			"count": 1,
+			"IDPath": "/local/notes",
+			"pattern": "nextSrv#"
+		}
+	}
+}

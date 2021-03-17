@@ -1,0 +1,26 @@
+{
+	"serverSetup": {
+		"server": {
+			"type": "additional",
+			"name": "nextSrv0",
+			"domainName": "SutolDemo",
+			"IDFilePath": "/local/notes/nextSrv0.id"
+		},
+		"network": {
+			"hostName": "nextSrv0.sutol.demo"
+		},
+		"org": {
+			"orgName": "SutolDemo"		
+		},
+		"admin": {
+			"CN": "Administrator"			
+		},
+		"existingServer": {
+			"CN": "demo02",
+			"hostNameOrIP": "demo02.sutol.demo"
+		},
+        "notesINI": {
+            "ServerTasks": "Update,Replica,Router,AMgr,AdminP,CalConn,Sched,HTTP"
+        }
+	}
+}

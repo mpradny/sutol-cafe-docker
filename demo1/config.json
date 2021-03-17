@@ -1,0 +1,24 @@
+{
+	"serverSetup": {
+		"server": {
+			"type": "first",
+			"name": "demo01",
+			"domainName": "SutolDemo"
+		},
+		"network": {
+			"hostName": "demo01.sutol.demo"
+		},
+		"org": {
+			"orgName": "SutolDemo",
+			"certifierPassword": "passw0rd"
+		},
+		"admin": {
+			"lastName": "Administrator",
+			"password": "passw0rd",
+			"IDFilePath": "/local/notesdata/domino/html/admin.id"
+		},
+        "notesINI": {
+            "ServerTasks": "Update,Replica,Router,AMgr,AdminP,CalConn,Sched,HTTP"
+        }
+	}
+}
